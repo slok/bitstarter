@@ -37,8 +37,9 @@ var assertFileExists = function(infile) {
     return instr;
 };
 
+// Simple url checker
 var validURL = function(url) {
-    var urlOk = true;
+    var urlOk = url.match(/https?:\/\/.*\..+/) !== null;
     if(!urlOk) {
         console.log("%s Isn't a valid url", url);
         process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
